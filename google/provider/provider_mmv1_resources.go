@@ -156,7 +156,6 @@ import (
 	"github.com/hashicorp/terraform-provider-google/google/services/storageinsights"
 	"github.com/hashicorp/terraform-provider-google/google/services/storagetransfer"
 	"github.com/hashicorp/terraform-provider-google/google/services/tags"
-	"github.com/hashicorp/terraform-provider-google/google/services/tpu"
 	"github.com/hashicorp/terraform-provider-google/google/services/transcoder"
 	"github.com/hashicorp/terraform-provider-google/google/services/vertexai"
 	"github.com/hashicorp/terraform-provider-google/google/services/vmwareengine"
@@ -409,7 +408,6 @@ var handwrittenDatasources = map[string]*schema.Resource{
 	"google_tags_tag_keys":                                       tags.DataSourceGoogleTagsTagKeys(),
 	"google_tags_tag_value":                                      tags.DataSourceGoogleTagsTagValue(),
 	"google_tags_tag_values":                                     tags.DataSourceGoogleTagsTagValues(),
-	"google_tpu_tensorflow_versions":                             tpu.DataSourceTpuTensorflowVersions(),
 	"google_vpc_access_connector":                                vpcaccess.DataSourceVPCAccessConnector(),
 	"google_memorystore_instance":                                memorystore.DataSourceMemorystoreInstance(),
 	"google_memcache_instance":                                   memcache.DataSourceMemcacheInstance(),
@@ -1455,7 +1453,6 @@ var generatedResources = map[string]*schema.Resource{
 	"google_tags_tag_value_iam_binding":                                          tpgiamresource.ResourceIamBinding(tags.TagsTagValueIamSchema, tags.TagsTagValueIamUpdaterProducer, tags.TagsTagValueIdParseFunc),
 	"google_tags_tag_value_iam_member":                                           tpgiamresource.ResourceIamMember(tags.TagsTagValueIamSchema, tags.TagsTagValueIamUpdaterProducer, tags.TagsTagValueIdParseFunc),
 	"google_tags_tag_value_iam_policy":                                           tpgiamresource.ResourceIamPolicy(tags.TagsTagValueIamSchema, tags.TagsTagValueIamUpdaterProducer, tags.TagsTagValueIdParseFunc),
-	"google_tpu_node":                                                            tpu.ResourceTPUNode(),
 	"google_transcoder_job":                                                      transcoder.ResourceTranscoderJob(),
 	"google_transcoder_job_template":                                             transcoder.ResourceTranscoderJobTemplate(),
 	"google_vertex_ai_dataset":                                                   vertexai.ResourceVertexAIDataset(),
@@ -1794,7 +1791,6 @@ func UseGeneratedProducts() {
 	var _ = storageinsights.ProductName
 	var _ = storagetransfer.ProductName
 	var _ = tags.ProductName
-	var _ = tpu.ProductName
 	var _ = transcoder.ProductName
 	var _ = vertexai.ProductName
 	var _ = vmwareengine.ProductName
